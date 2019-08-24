@@ -4,7 +4,8 @@ import allMessage
 import telebot
 import paramiko
 import os
-import sys 
+import sys
+import time
 
 bot = telebot.TeleBot(config.botToken)
 
@@ -74,9 +75,9 @@ def send_welcome(message):
 #
 #Message /aboutBot
 @bot.message_handler(func=lambda message: \
-                    knownUsers.get(message.chat.id).userStep == 2, commands=['aboutBot'])
+                    knownUsers.get(message.chat.id).userStep == 2, commands=['aboutbot'])
 def send_aboutBot(message):
-    bot.send_message(message.chat.id, allMessage.commands['aboutBot'])
+    bot.send_message(message.chat.id, allMessage.commands['aboutbot'])
 
 #
 #
@@ -130,7 +131,7 @@ def deactivate_user(message):
 #
 #Set ssh user and ssh password
 @bot.message_handler(func=lambda message: \
-                    knownUsers.get(message.chat.id).userStep == 2, commands=['setsshUser'])
+                    knownUsers.get(message.chat.id).userStep == 2, commands=['setsshuser'])
 def request_ssh_user(message):
     knownUsers.get(message.chat.id).userStep = 1
     sshUser = bot.send_message(message.chat.id, "Enter the ssh user:")
@@ -153,7 +154,7 @@ def add_ssh_password(message):
 #
 #Set host(IP) for ssh connection:
 @bot.message_handler(func=lambda message: \
-                    knownUsers.get(message.chat.id).userStep == 2, commands=['setsshHost'])
+                    knownUsers.get(message.chat.id).userStep == 2, commands=['setsshhost'])
 def request_ssh_host(message):
     knownUsers.get(message.chat.id).userStep = 1
     sshDomain = bot.send_message(message.chat.id, "Enter domain(ip) for ssh connection:")
@@ -172,7 +173,7 @@ def add_ssh_host(message):
                     (knownUsers.get(message.chat.id).sshPassword == '')), \
                     content_types=["text"])
 def ssh_user_not_exist(message):
-    bot.send_message(message.chat.id, "Ssh user not exist. Use /setsshUser or /help")
+    bot.send_message(message.chat.id, "Ssh user not exist. Use /setsshuser or /help")
 
 #
 #
@@ -182,7 +183,7 @@ def ssh_user_not_exist(message):
                     (knownUsers.get(message.chat.id).sshHost == '')), \
                     content_types=["text"])
 def ssh_user_not_exist(message):
-    bot.send_message(message.chat.id, "Ssh host not exist. Use /setsshHost or /help")
+    bot.send_message(message.chat.id, "Ssh host not exist. Use /setsshhost or /help")
 
 #
 #
@@ -249,6 +250,7 @@ def do_ssh_command(message):
 
         
 
-
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+while True
+    if __name__ == '__main__':
+        bot.polling(none_stop=True)
+    time.sleep(10)
