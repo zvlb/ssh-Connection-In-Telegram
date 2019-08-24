@@ -24,6 +24,6 @@ commands = {
                     u'/information - Show information, about ssh-connection\n'
                     u'/aboutBot - Information about bot and author\n',
 
-                'aboutBot': 'Author GitHub - https://github.com/vzemtsov\n'
+                'aboutbot': 'Author GitHub - https://github.com/vzemtsov\n'
                     u'Please write wishes to improve this bot',
 }
