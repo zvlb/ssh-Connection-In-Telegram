@@ -250,7 +250,7 @@ def do_ssh_command(message):
 
         
 
-while True
+while True :
     if __name__ == '__main__':
         bot.polling(none_stop=True)
     time.sleep(10)
