@@ -22,4 +22,6 @@ To use this bot u need:
 5. Change all u want in telegram/config.py
 6. Import telebot library
 (pip install telebot)
-7. Start telegram.bot.py
+7. Import paramico library
+(pip install paramiko)
+8. Start telegram.bot.py
